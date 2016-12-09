@@ -9,8 +9,17 @@ public class Main {
 
     public static Map<String, ArrayList<String>> phoneBook;
 
-    public static ArrayList<String> search(String name) {
-        return phoneBook.get(name);
+    public static int search(String name) {
+        try {
+            ArrayList<String> result = phoneBook.get(name);
+            for (int i = 0; i < result.size(); i++) {
+                System.out.println((i+1) + ". " + result.get(i));
+            }
+            return result.size();
+        } catch (NullPointerException e) {
+            System.out.println("Data not found!");
+            return 0;
+        }
     }
 
     public static void main(String[] args) {
@@ -27,7 +36,6 @@ public class Main {
         phones.add("+8 800 2000 900");
         phones.add("+8 800 2000 000");
         phoneBook.put("Сидоров С.С.", phones);
-
-        System.out.println(search("Сидоров С.С.").toString());
+        search("Сидоров С.С.");
     }
 }
