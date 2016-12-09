@@ -7,16 +7,19 @@ public class MainTest {
 
     @Test
     public void searchTest0() throws Exception{
-        assertEquals(Main.search(null), 0);
+        Main m1 = new Main();
+        assertEquals(m1.search(null), 0);
     }
 
     @Test
     public void searchTest1() throws Exception{
-        assertEquals(Main.search("Сидоров С.С."), 3);
+        Main m1 = new Main();
+        assertEquals(m1.search("Сидоров С.С."), 3);
     }
 
     @Test
     public void searchTest2() throws Exception{
-        assertEquals(Main.search("123"), 0);
+        Main m1 = new Main();
+        assertEquals(m1.search("123"), 0);
     }
 }

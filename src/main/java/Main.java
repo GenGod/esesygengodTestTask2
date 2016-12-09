@@ -7,9 +7,9 @@ import java.util.Map;
  */
 public class Main {
 
-    public static Map<String, ArrayList<String>> phoneBook;
+    public  Map<String, ArrayList<String>> phoneBook;
 
-    public static int search(String name) {
+    public int search(String name) {
         try {
             ArrayList<String> result = phoneBook.get(name);
             for (int i = 0; i < result.size(); i++) {
@@ -22,7 +22,7 @@ public class Main {
         }
     }
 
-    public static void main(String[] args) {
+    public Main() {
         phoneBook = new HashMap<String, ArrayList<String>>();
         ArrayList<String> phones = new ArrayList<String>();
         phones.add("+8 800 2000 500");
@@ -36,6 +36,5 @@ public class Main {
         phones.add("+8 800 2000 900");
         phones.add("+8 800 2000 000");
         phoneBook.put("Сидоров С.С.", phones);
-        search("Сидоров С.С.");
     }
 }
